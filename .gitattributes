@@ -1,2 +1,2 @@
-file filter=lfs diff=lfs merge=lfs -text
-distilbert50_v2 filter=lfs diff=lfs merge=lfs -text
+distilbert50_v2/* filter=lfs diff=lfs merge=lfs -text
+ques/* filter=lfs diff=lfs merge=lfs -text
