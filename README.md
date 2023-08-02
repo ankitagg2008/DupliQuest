@@ -1,1 +1,1 @@
-# AIM5011-Group4
+# Duplicate problem recognizer
