@@ -1,1 +1,2 @@
 # Duplicate problem recognizer
+## Motivation
