@@ -19,8 +19,8 @@ This dataset is designed for the task of predicting whether pairs of questions h
   - `question1`, `question2`: Full text of each question
   - `is_duplicate`: Target variable, 1 if questions have the same meaning, 0 otherwise.
 ### Installation instructions: 
-- 1. Install Python environment: Ensure that your computer has Python installed. If not installed, you can download and install it on the [Python official website](https://www.python.org/downloads/).
-- 2. Install necessary dependencies: In the project root directory, you can use the following command to install the necessary dependency libraries.
+- Install Python environment: Ensure that your computer has Python installed. If not installed, you can download and install it on the [Python official website](https://www.python.org/downloads/).
+- Install necessary dependencies: In the project root directory, you can use the following command to install the necessary dependency libraries.
   - `Machine Learning`: The dependencies you may need for [machine learning files](https://github.com/shengjie94/AIM5011-Group4/blob/main/Part_1_Machine_Learning_Models.ipynb)
     ```
     pip install pandas matplotlib seaborn beautifulsoup4 nltk wordcloud distance xgboost scikit-learn tabulate
@@ -32,8 +32,8 @@ This dataset is designed for the task of predicting whether pairs of questions h
 ### Usage
 #### Machine Learning Models
 - **Environmental preparation:**
-  - 1. Ensure that Python and related libraries (pandas, scikit learn, numpy, matplotlib) are installed.
-  - 2. Download training and testing data, such as CSV files.
+  - Ensure that Python and related libraries (pandas, scikit learn, numpy, matplotlib) are installed.
+  - Download training and testing data, such as CSV files.
 - **Run Code:**
   - Before running the code, it is necessary to ensure that the [data file](https://github.com/shengjie94/AIM5011-Group4/blob/main/ques/ques_pairs_extra.csv) is ready and placed in the correct Working directory. Ensure that the data file contains columns 'question1' and 'question2', as well as' is_ Duplicate' column as label.
   - Run the code in the Python environment and ensure that all required dependency libraries (such as 'numpy', 'pandas', 'matplotlib', 'seaborn', 'bs4', 'wordcloud', 'nltk', etc.) are installed. The steps to run the code include data cleaning, feature extraction, model training, etc.
