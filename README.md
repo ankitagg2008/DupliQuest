@@ -1,4 +1,4 @@
-# Duplicate problem recognizer
+![Duplicate Question Pairs](https://github.com/shengjie94/AIM5011-Group4/blob/main/logo/duplicatequestionpairs.png)
 This project is an end-to-end web-based work product primarily designed to determine whether two given problems are duplicated. The output will be displayed regardless of whether the given problem set is repeated or not.
 ## Motivation
 Considering that some companies wish to retain text (such as discussion forums and query threads) for ease of management and subsequent user queries. We design a Duplicate problem recognizer to help filter out duplicate problems.
