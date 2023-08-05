@@ -2,30 +2,51 @@
 This project is an end-to-end web-based work product primarily designed to determine whether two given problems are duplicated. The output will be displayed regardless of whether the given problem set is repeated or not.
 ## Motivation
 Considering that some companies wish to retain text (such as discussion forums and query threads) for ease of management and subsequent user queries. We design a Duplicate problem recognizer to help filter out duplicate problems.
-
 The Duplicate problem recorder provides a concise and easy-to-use web page. Users can input questions to determine if the problem is repeated. For the future, we will try to add additional features, which may include intention classification, emotion analysis, and automatic summarization.
+## Main models
+### Sentence Bert Model
+This repository contains the implementation of a Sentence BERT (SBERT) model utilizing a Siamese Network architecture, primarily for the task of sentence or question pair similarity prediction.
+#### Overview
+The Siamese Sentence BERT model, as implemented here, is a variation of the well-known BERT (Bidirectional Encoder Representations from Transformers) model, which is designed specifically for sentence-pair tasks. In this model, each sentence in a pair passes through the same BERT model (hence the term 'Siamese'), producing sentence embeddings. The model then calculates the distance between these embeddings to decide whether the two sentences are semantically similar.
+#### Features
+- **Siamese Network Architecture:** We exploit a Siamese network architecture, where two different inputs pass through the same sub-network. The outputs of these subnetworks are then compared to predict whether the inputs are similar.
+- **BERT:** We leverage the BERT model to generate sentence embeddings, leveraging its powerful ability to understand the context of words in a sentence, enabling it to efficiently perform natural language processing (NLP) tasks.
+- **Custom dataset processing:** We include a custom DataLoader that preprocesses and organizes the dataset into a format suitable for our Siamese Sentence BERT model.
+- **Performance Monitoring:** The code also includes functions for computing key performance metrics such as accuracy, F1 score, and the loss function (Binary Cross Entropy with Logits Loss), giving a comprehensive evaluation of the model's performance.
+- **Learning Rate Scheduling:** We've implemented a learning rate scheduler, ‘ReduceLROnPlateau’, which adjusts the learning rate based on the model's performance, ensuring an efficient training process.
+### Distilbert Model
+The project also implements a text classification model using DistilBert, a lightweight and efficient variant of the BERT model developed by Hugging Face.
+#### Overview
+DistilBert is a transformer-based model that utilizes the concept of model distillation. It is trained to mimic a larger model (in our case, BERT), which allows DistilBert to achieve high performance while being more computationally efficient.
+#### Features
+- **DistilBert Architecture:** We leverage the DistilBert model, which is a refined version of the BERT model. DistilBert is smaller, faster, cheaper and lighter, yet still maintains a high level of performance. It is specifically designed for tasks like ours, where we use Transformer encoders instead of decoders.
+- **Pairwise Question Analysis:** The model is designed to handle pairs of questions, assessing the similarity between the two to determine if they're duplicates. This is similar to a Siamese Network Architecture, where two distinct inputs pass through identical subnetworks.
+- **Powerful Tokenization:** We leverage an efficient tool, DistilBertTokenizer, that breaks down input text into tokens that can then be processed by our DistilBert model. This tokenizer is specifically designed to work with DistilBert and manages tasks such as adding special tokens and handling different sequence lengths.
+- **Custom Dataset Processing:** This same model also includes a custom class called QuoraDataset that preprocesses the dataset and organizes it into a format suitable for our DistilBert model. This involves using a tokenizer to convert text into input IDs and attention masks that the model can process.
+- **Learning Rate Scheduling:** We also use the ReduceLROnPlateau learning rate scheduler to help optimize our training process.
+#### Overview
 ## Quick Get Start
 ### Dataset Description
 This dataset is designed for the task of predicting whether pairs of questions have the same meaning. Comprising a mix of genuine questions from Quora and computer-generated pairs added by Kaggle as an anti-cheating measure, the dataset is labeled by human experts. While these labels represent a generally accepted consensus, they are acknowledged to be 'informed' rather than absolute truths, and may contain inaccuracies. You can find it in the [Kaggle competition](https://www.kaggle.com/competitions/quora-question-pairs/data). At the same time, you can also view and download content in our [ques pairs extra](https://github.com/shengjie94/AIM5011-Group4/blob/main/ques/ques_pairs_extra.csv).
 #### Here is some Details:
-- Objective: Predict if question pairs have the same meaning.
-- Source: Genuine examples from Quora, supplemented with artificial pairs by Kaggle.
-- Size: 523.24 MB
-- Type: Available in zip and csv formats.
-- Files: 4 files
-- Fields:
+- **Objective:** Predict if question pairs have the same meaning.
+- **Source:** Genuine examples from Quora, supplemented with artificial pairs by Kaggle.
+- **Size:** 523.24 MB
+- **Type:** Available in zip and csv formats.
+- **Files:** 4 files
+- **Fields:**
   - `id`: ID of a training set question pair
   - `qid1`, `qid2`: Unique IDs of each question (train.csv only)
   - `question1`, `question2`: Full text of each question
   - `is_duplicate`: Target variable, 1 if questions have the same meaning, 0 otherwise.
 ### Installation instructions: 
-- Install Python environment: Ensure that your computer has Python installed. If not installed, you can download and install it on the [Python official website](https://www.python.org/downloads/).
-- Install necessary dependencies: In the project root directory, you can use the following command to install the necessary dependency libraries.
-  - `Machine Learning`: The dependencies you may need for [machine learning files](https://github.com/shengjie94/AIM5011-Group4/blob/main/Part_1_Machine_Learning_Models.ipynb)
+- **Install Python environment:** Ensure that your computer has Python installed. If not installed, you can download and install it on the [Python official website](https://www.python.org/downloads/).
+- **Install necessary dependencies:** In the project root directory, you can use the following command to install the necessary dependency libraries.
+  - **Machine Learning:** The dependencies you may need for [machine learning files](https://github.com/shengjie94/AIM5011-Group4/blob/main/Part_1_Machine_Learning_Models.ipynb)
     ```
     pip install pandas matplotlib seaborn beautifulsoup4 nltk wordcloud distance xgboost scikit-learn tabulate
     ```
-  - `Deep Learning`:The dependencies you may need for [Deep learning files](https://github.com/shengjie94/AIM5011-Group4/blob/main/Part_2_Deep_Learning_Models_using_Transformers.ipynb)
+  - **Deep Learning:** The dependencies you may need for [Deep learning files](https://github.com/shengjie94/AIM5011-Group4/blob/main/Part_2_Deep_Learning_Models_using_Transformers.ipynb)
     ```
     pip install torch transformers gradio
     ```
