@@ -62,7 +62,7 @@ This dataset is designed for the task of predicting whether pairs of questions h
 - **Environmental preparation:**
   - Ensure that the required dependency libraries, including 'torch', 'transformers', and 'graphics', are installed in your Python environment.
 - **Run Code:**
-  - In the code, we first downloaded the pre trained DistilBERT model and made minor adjustments. After completing the training of the model, save it as distilbert50_ v3.pth. You can view the example in [distilbert50_v3](https://github.com/shengjie94/AIM5011-Group4/blob/main/distilbert50_v2/distilbert50_v2.pth).
+  - In the code, we first downloaded the pre trained DistilBERT model and made minor adjustments. After completing the training of the model, save it as distilbert50_ v3.pth. You can view the example in [distilbert50_v3](https://github.com/shengjie94/AIM5011-Group4/blob/main/distilbert50_v3/distilbert50_v3.pth).
   - We have created a simple web interface through Graph for using trained models for problem repetition determination. You can input two questions through this interface and obtain the predicted results of the model, that is, whether they are duplicate questions.
 ## Report Issues
 Report bugs or feature requests using the [Duplicate problem recognizer issue tracker](https://github.com/shengjie94/AIM5011-Group4/issues).
