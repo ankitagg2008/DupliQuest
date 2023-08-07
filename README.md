@@ -5,7 +5,19 @@ Online platforms like Quora, Yahoo, Stack Overflow and Grapple with a significan
 
 The Duplicate Question Pairs provides a concise and easy-to-use web page. Users can input questions to determine if the problem is repeated. For the future, we will try to add additional features, which may include intention classification, emotion analysis, and automatic summarization.
 ## Models
-This repository centers around the application and evaluation of various BERT-based models, all aimed at detecting similarity and possible duplication in pairs of questions. Of the different models implemented and examined, DistilBert emerges as the most effective choice for this specific task.
+In our project I use three ways: machine learning model, SBERT model, and DistilBERT model：
+### Machine Learning Model
+We used traditional machine learning models in the project, which use manually extracted features for training and prediction. Specifically, the following machine learning models are used for modeling:
+- **Random forest:** a Ensemble learning algorithm, which consists of multiple decision trees and makes predictions by voting or averaging.
+- **XGBoost:** A gradient enhancement algorithm used for regression and classification problems, which improves performance by iteratively adding weak classifiers.
+- **Logistic regression:** a linear classification model, which is used to deal with binary classification problems, and maps the input to the probability value through the sigmoid function.
+- **Decision Tree:** A basic classification and regression method that uses a tree structure to make decisions.
+- **Bagging:** a Ensemble learning method, which builds multiple classifiers by random sampling and votes their prediction results.
+- **AdaBoost:** a Ensemble learning algorithm that improves the model performance by gradually strengthening the classifier's ability to classify error samples.
+- **Gradient Boosting:** A gradient boosting algorithm similar to XGBoost, but may be simpler by gradually improving classifier performance.
+These traditional machine learning models use preprocessing and Feature engineering to transform text data when processing text matching tasks, and train and predict based on these features. However, the performance of traditional machine learning models may be limited by feature design, and deep learning models such as BERT, Sentence BERT, or DBert may perform better for complex text semantic understanding.
+
+We used Sentence Bert Model and Distilbert Model in the deep learning model file. Both models aim to detect similarity and possible duplication in paired problems. Of the different models implemented and examined, DistilBert emerges as the most effective choice for this specific task.
 ### Sentence Bert Model
 In the domain of sentence pair tasks, the Sentence BERT (SBERT) model is one of the effective methods we have studied. It utilizes Siamese network architecture, which is a powerful strategy for comparing different entities.
 #### Overview
@@ -68,7 +80,7 @@ This dataset is designed for the task of predicting whether pairs of questions h
 - **Environmental preparation:**
   - Ensure that the required dependency libraries, including 'torch', 'transformers', and 'graphics', are installed in your Python environment.
 - **Run Code:**
-  - In the code, we first downloaded the pre trained DistilBERT model and made minor adjustments. After completing the training of the model, save it as distilbert50_ v3.pth. You can view the example in [distilbert50_v3](https://github.com/shengjie94/AIM5011-Group4/blob/main/distilbert50_v3/distilbert50_v3.pth).
+  - After completing the training of the model, save it in form of ".pth" or ".h5" model file depending on utilization of Pytorch or TensorFlow. With respect to our task, we have saved the trained model as .pth file and you can view the saved model file here: [distilbert50_v3](https://github.com/shengjie94/AIM5011-Group4/blob/main/distilbert50_v3/distilbert50_v3.pth).
   - We have created a simple web interface through Graph for using trained models for problem repetition determination. You can input two questions through this interface and obtain the predicted results of the model, that is, whether they are duplicate questions.
 ## Report Issues
 Report bugs or feature requests using the [Duplicate problem recognizer issue tracker](https://github.com/shengjie94/AIM5011-Group4/issues).
