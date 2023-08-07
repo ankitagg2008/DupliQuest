@@ -16,6 +16,7 @@ SBERT is a variation of the renowned BERT (Bidirectional Encoder Representations
 - **Custom Dataset Processing:** We have included a custom DataLoader that can preprocess datasets and arrange them into a format suitable for our Sentence BERT model.
 - **Performance monitoring:** the code also contains functions for calculating key performance indicators, such as accuracy, F1 score and Loss function (binary Cross entropy with Logits loss). These provide a comprehensive evaluation of model performance.
 - **Learning rate scheduling:** We have implemented a Learning rate scheduler "ReduceLROnPlateau". It adjusts the Learning rate and optimizes the training process according to the performance of the model.
+
 Although the sentence BERT model provides excellent features and functionality, DistilBert (a refined and more efficient variant of BERT) has been proven to be our best choice for detecting specific tasks related to repetitive problems. More information about the DistilBert model and its implementation can be found in the appropriate section of this repository.
 ### Distilbert Model
 The main focus of this repository is the implementation and optimization of the DistilBert model for detecting duplicate problem pairs of tasks. DistilBert is a lightweight and computationally efficient variant of the BERT model developed by Hugging Face. This model demonstrates the potential of model distillation, which involves training smaller models to mimic the performance of larger models, while maintaining high performance and being faster and more cost-effective.
@@ -27,6 +28,7 @@ DistilBert uses a converter based model architecture specifically designed to ha
 - **Powerful tokenization:** We utilize the DistilBertTokenizer, an efficient tool that decomposes input text into tokens and is then processed by our DistilBert model. This word breaker is specifically designed for use with DistilBert to perform tasks such as adding special tags and handling different sequence lengths.
 - **Custom dataset processing:** We also include a custom class called QuoraDataset. This class preprocesses the dataset and organizes it into a format that the DistilBert model can process. This involves using a word breaker to convert text into input IDs and attention masks.
 - **Learning rate scheduling:** In order to optimize our training process, we use the "ReduceLROnPlateau" Learning rate scheduler, which adjusts the Learning rate according to the performance of the model.
+
 By comprehensively evaluating different BERT based models and their performance in identifying repetitive problems on tasks, DistilBert has become our preferred choice due to its impressive balance between performance and efficiency.
 ## Quick Get Start
 ### Dataset Description
