@@ -1,0 +1,12 @@
+# Core dependencies
+# Lightweight core; optional packages for later stages
+python-dotenv
+requests
+
+# Optional analysis and baseline packages
+# scikit-learn
+# sentence-transformers
+
+# Optional LLM integration
+# transformers
+# openai

@@ -1,0 +1,25 @@
+{
+  "labels": [
+    {
+      "name": "exact_duplicate",
+      "description": "The two questions express the same intent with nearly identical wording."
+    },
+    {
+      "name": "paraphrase",
+      "description": "The two questions express the same intent using different wording."
+    },
+    {
+      "name": "related_but_not_duplicate",
+      "description": "The two questions are semantically related but do not have the same intent."
+    },
+    {
+      "name": "partial_overlap",
+      "description": "The two questions share some topic or context but are not equivalent."
+    },
+    {
+      "name": "unrelated",
+      "description": "The two questions are about different topics or intents."
+    }
+  ],
+  "default_split": "train"
+}
